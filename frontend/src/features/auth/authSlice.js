@@ -5,6 +5,7 @@ import { extractErrorMessage } from "../../utils";
 // Get user from localstorage
 const user = JSON.parse(localStorage.getItem("user"));
 
+
 const initialState = {
   user: user ? user : null,
   isLoading: false,
@@ -34,9 +35,11 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
 // Logout user
 export const logout = createAction("auth/logout", () => {
   authService.logout();
-
+ 
   return {};
 });
+
+
 
 export const authSlice = createSlice({
   name: "auth",
